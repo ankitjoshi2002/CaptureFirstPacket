@@ -1,0 +1,36 @@
+Task 1. Identify network interfaces
+In this task, you must identify the network interfaces that can be used to capture network packet data.
+
+Use ifconfig to identify the interfaces that are available:
+sudo ifconfig
+Copied!
+This command returns output similar to the following:
+
+eth0: flags=4163  mtu 1460
+        inet 172.17.0.2  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:ac:11:00:02  txqueuelen 0  (Ethernet)
+        RX packets 784  bytes9379957 (8.9 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 683  bytes 56880 (55.5 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0 collisions 0
+
+lo: flags=73  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 400  bytes 42122 (041.1 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 400  bytes 42122 (041.1 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0 collisions 0
+The Ethernet network interface is identified by the entry with the eth prefix.
+
+So, in this lab, you'll use eth0 as the interface that you will capture network packet data from in the following tasks.
+
+Use tcpdump to identify the interface options available for packet capture:
+sudo tcpdump -D
+Copied!
+This command will also allow you to identify which network interfaces are available. This may be useful on systems that do not include the ifconfig command.
+
+
+You have completed this task and used ifconfig and tcpdump to list the network interfaces in this machine.
+Identify network interfaces
+You have completed this task and used ifconfig and tcpdump to list the network interfaces in this machine.
